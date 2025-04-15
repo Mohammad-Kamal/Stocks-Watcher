@@ -2,12 +2,17 @@ package com.mohammadkamal.stockwatcher.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import javax.annotation.processing.Generated;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class User {
     @Id
@@ -31,10 +36,10 @@ public class User {
     @NotNull
     private LocalDate birthDate;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user_id")
     private List<Stock> favoriteStocks= new ArrayList<>();
 
-    @OneToMany
+    @OneToMany(mappedBy = "user_id")
     private List<StockAlert> stockAlerts = new ArrayList<>();
 
 }
