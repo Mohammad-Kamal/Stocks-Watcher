@@ -3,6 +3,7 @@
 Stocks-Watcher is a backend service built with Spring Boot and PostgreSQL that allows users to monitor live stock prices and get alerted when certain thresholds are reached. This project is currently under active development with the goal of releasing a minimum viable product (MVP) soon.
 
 🚀 Features
+ 
   .Add stock symbols to a personal watchlist (e.g., AAPL, GOOG)
 
   .Periodically fetch live stock data (price, change %, etc.)
@@ -12,6 +13,7 @@ Stocks-Watcher is a backend service built with Spring Boot and PostgreSQL that a
   .Log warnings or trigger alerts if a price crosses user-defined thresholds
 
 🛠️ Tech Stack
+ 
   .Backend: Java, Spring Boot
 
   .Database: PostgreSQL
