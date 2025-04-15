@@ -36,10 +36,15 @@ public class User {
     @NotNull
     private LocalDate birthDate;
 
-    @OneToMany(mappedBy = "user_id")
-    private List<Stock> favoriteStocks= new ArrayList<>();
+    @ManyToMany
+    @JoinTable(
+            name = "favorite_stock",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "stock_id")
+    )
+    private List<Stock> favoriteStock= new ArrayList<>();
 
-    @OneToMany(mappedBy = "user_id")
-    private List<StockAlert> stockAlerts = new ArrayList<>();
+    @OneToMany(mappedBy = "user")
+    private List<StockAlert> stockAlert = new ArrayList<>();
 
 }

@@ -31,7 +31,10 @@ public class Stock {
     @NotNull
     private String companyName;
 
-    @OneToMany
-    @JoinColumn(name = "user_id")
+    @ManyToMany(mappedBy = "favoriteStock")
     private List<User> user = new ArrayList<>();
+
+    @OneToMany(mappedBy = "stock")
+    private List<StockAlert> stockAlert = new ArrayList<>();
+
 }
