@@ -9,5 +9,5 @@ import java.util.Optional;
 
 public interface StockAlertRepository extends JpaRepository<StockAlert, Long> {
 
-    List<StockAlert> findByUser_Id(Long userID);
+    List<StockAlert> findByUserId(Long userID);
 }
